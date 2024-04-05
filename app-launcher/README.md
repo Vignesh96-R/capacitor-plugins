@@ -38,6 +38,18 @@ const openPortfolioPage = async () => {
 };
 ```
 
+## Setting Up Intent Filters:
+
+To enable your application to handle custom URLs with query parameters, you must define intent filters in your AndroidManifest.xml in the receiving Android application. Additionally, if you want to ensure that the activity handling the custom URL launches as a separate task, you can specify android:launchMode="singleTask" within the activity tag.
+```xml
+<intent-filter>
+  <action android:name="android.intent.action.VIEW" />
+  <category android:name="android.intent.category.DEFAULT" />
+  <category android:name="android.intent.category.BROWSABLE" />
+  <data android:scheme="com.getcapacitor.myapp" />
+</intent-filter>
+```
+
 ## API
 
 <docgen-index>
